@@ -1,0 +1,513 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <include layout="@layout/custom_titlebar" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none" >
+   
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@color/setting_common_bg"
+        android:orientation="vertical"
+        android:paddingLeft="12.0dip"
+        android:paddingRight="12.0dip"
+        android:paddingTop="24.0dip" >
+
+        <RelativeLayout
+            android:id="@+id/book_time"
+            android:layout_width="fill_parent"
+            android:layout_height="44.0dip"
+            android:background="@drawable/reserver_itembg_one"
+            android:clickable="true"
+            android:gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingLeft="12.0dip"
+            android:paddingRight="12.0dip" >
+
+            <ImageView
+                android:id="@+id/book_time_left_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/reservation_icon_time_nor" />
+
+            <ImageView
+                android:id="@+id/book_time_right_coin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/add" />
+
+            <TextView
+                android:id="@+id/book_time_text"
+                style="@style/setting_common_textview"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toLeftOf="@id/book_time_right_coin"
+                android:layout_toRightOf="@id/book_time_left_coin"
+                android:text="有效期1天"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip"
+                android:textColorHint="@color/about_us_copyright" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24.0dip"
+            android:background="@drawable/reserver_itembg_one"
+            android:orientation="vertical"
+            android:padding="1.0px" >
+
+            <RelativeLayout
+                android:id="@+id/book_city"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_top"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_city_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_outset" />
+
+                <ImageView
+                    android:id="@+id/book_city_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_details" />
+
+                <TextView
+                    android:id="@+id/book_city_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_city_right_coin"
+                    android:layout_toRightOf="@id/book_city_left_coin"
+                    android:hint="@string/book_from_hint"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+            
+            <com.release.kuaiyi56.MyGridView
+                android:id="@+id/list_city1"
+                style="@style/CityGridViewStyle"
+                android:background="@drawable/reserver_itembg_center"
+                android:paddingTop="3.0dip"
+                android:visibility="gone" />
+            
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@color/setting_common_line" />
+
+            <RelativeLayout
+                android:id="@+id/book_to"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_bottom"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_to_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/icon_destination" />
+
+                <ImageView
+                    android:id="@+id/book_to_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_details" />
+
+                <TextView
+                    android:id="@+id/book_to_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_to_right_coin"
+                    android:layout_toRightOf="@id/book_to_left_coin"
+                    android:ellipsize="end"
+                    android:hint="@string/book_to_hint"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:singleLine="true"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+              <com.release.kuaiyi56.MyGridView
+                android:id="@+id/list_city2"
+                style="@style/CityGridViewStyle"
+                android:background="@drawable/reserver_itembg_center"
+                android:paddingTop="3.0dip"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24.0dip"
+            android:background="@drawable/reserver_itembg_one"
+            android:orientation="vertical"
+            android:padding="1.0px" >
+
+    
+
+            <RelativeLayout
+                android:id="@+id/book_truck"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_top"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_truck_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/truck" />
+
+                <ImageView
+                    android:id="@+id/book_truck_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_details" />
+
+                <TextView
+                    android:id="@+id/book_truck_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_truck_right_coin"
+                    android:layout_toRightOf="@id/book_truck_left_coin"
+                    android:ellipsize="end"
+                    android:hint="车型"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:singleLine="true"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+            
+               <com.release.kuaiyi56.MyGridView
+                android:id="@+id/truck_type_choose"
+                style="@style/CityGridViewStyle"
+                android:background="@drawable/reserver_itembg_center"
+                android:paddingTop="3.0dip"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@color/setting_common_line" />
+
+            <RelativeLayout
+                android:id="@+id/book_length"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_center"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_length_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/length" />
+
+                <ImageView
+                    android:id="@+id/book_length_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_details" />
+
+                <TextView
+                    android:id="@+id/book_length_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_length_right_coin"
+                    android:layout_toRightOf="@id/book_length_left_coin"
+                    android:ellipsize="end"
+                    android:hint="车长"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:singleLine="true"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+            <com.release.kuaiyi56.MyGridView
+                android:id="@+id/truck_length_choose"
+                style="@style/CityGridViewStyle"
+                android:background="@drawable/reserver_itembg_center"
+                android:paddingTop="3.0dip"
+                android:visibility="gone" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@color/setting_common_line" />
+
+            <RelativeLayout
+                android:id="@+id/book_type"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_bottom"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_type_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/box" />
+
+                <ImageView
+                    android:id="@+id/book_type_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/arrow_details" />
+
+                <TextView
+                    android:id="@+id/book_type_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_type_right_coin"
+                    android:layout_toRightOf="@id/book_type_left_coin"
+                    android:ellipsize="end"
+                    android:hint="货物类型"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:singleLine="true"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+            <com.release.kuaiyi56.MyGridView
+                android:id="@+id/goods_type_choose"
+                style="@style/CityGridViewStyle"
+                android:background="@drawable/reserver_itembg_center"
+                android:paddingTop="3.0dip"
+                android:visibility="gone" />
+            <View
+                    android:layout_width="fill_parent"
+                    android:layout_height="1.0px"
+                    android:background="@color/setting_common_line" />
+            
+              <RelativeLayout
+                android:id="@+id/book_Weight"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_bottom"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_Weight_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/weight1" />
+
+                  <TextView
+                    android:id="@+id/book_Weight_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:hint="吨" />
+
+                <EditText
+                    android:id="@+id/book_Weight_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_Weight_right_coin"
+                    android:layout_toRightOf="@id/book_Weight_left_coin"
+                    android:hint="吨位"
+                    android:maxLength="3"
+                    android:numeric="integer"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24.0dip"
+            android:background="@drawable/reserver_itembg_one"
+            android:orientation="vertical"
+            android:padding="1.0px" >
+
+            <RelativeLayout
+                android:id="@+id/book_price"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_top"
+           
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_price_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/tatalpay" />
+
+                <TextView
+                    android:id="@+id/book_price_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:hint="元" />
+
+                <EditText
+                    android:id="@+id/book_price_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_price_right_coin"
+                    android:layout_toRightOf="@id/book_price_left_coin"
+                    android:hint="总运费"
+                    android:maxLength="6"
+                    android:numeric="integer"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:textColorHint="@color/about_us_copyright" >
+
+                    <requestFocus />
+                </EditText>
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="1.0px"
+                android:background="@color/setting_common_line" />
+
+            <RelativeLayout
+                android:id="@+id/book_service_charge"
+                android:layout_width="fill_parent"
+                android:layout_height="44.0dip"
+                android:background="@drawable/reserver_itembg_bottom"
+                android:gravity="center_vertical"
+                android:paddingLeft="12.0dip"
+                android:paddingRight="12.0dip" >
+
+                <ImageView
+                    android:id="@+id/book_service_charge_left_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/infopay" />
+
+                <TextView
+                    android:id="@+id/book_service_charge_right_coin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:hint="元" />
+
+                <EditText
+                    android:id="@+id/book_service_charge_text"
+                    style="@style/setting_common_textview"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_toLeftOf="@id/book_service_charge_right_coin"
+                    android:layout_toRightOf="@id/book_service_charge_left_coin"
+                    android:ellipsize="end"
+                    android:hint="信息服务费"
+                    android:maxLength="4"
+                    android:numeric="integer"
+                    android:paddingLeft="12.0dip"
+                    android:paddingRight="12.0dip"
+                    android:singleLine="true"
+                    android:textColorHint="@color/about_us_copyright" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_marginTop="24.0dip"
+            android:gravity="bottom" >
+
+            <Button
+                android:id="@+id/book_confirm"
+                android:layout_width="fill_parent"
+                android:layout_height="56.0dip"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="16.0dip"
+                android:background="@drawable/btn_book_confirm_cannot"
+                android:text="确认发布"
+                android:textColor="@color/white"
+                 android:layout_centerVertical="true"
+                android:textSize="18.0sp" />
+        </RelativeLayout>
+    </LinearLayout>
+ </ScrollView>
+</LinearLayout>
